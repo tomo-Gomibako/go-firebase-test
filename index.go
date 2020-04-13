@@ -9,17 +9,24 @@ import (
 )
 
 func main() {
+	ctx := context.Background()
+	signup(ctx)
+}
+
+func getClient(ctx context.Context) auth.Client {
 	app, err := firebase.NewApp(context.Background(), nil)
 	if err != nil {
 		log.Fatalf("error initializing app: %v\n", err)
 	}
-
-	ctx := context.Background()
 	client, err := app.Auth(ctx)
 	if err != nil {
 		log.Fatalf("error getting Auth client: %v\n", err)
 	}
+	return *client
+}
 
+func signup(ctx context.Context) {
+	client := getClient(ctx)
 	user := (&auth.UserToCreate{}).
 		Email("test@example.com").
 		EmailVerified(false).
