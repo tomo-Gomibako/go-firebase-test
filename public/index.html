@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>Hello, World!</div>
+
+  <div>
+    <h3>Login</h3>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" value="test@example.com">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" value="password">
+    </div>
+    <div>
+      <button onclick="login()">login</button>
+    </div>
+  </div>
+
+  <div>
+    <button onclick="ping()">ping</button>
+  </div>
+
+  <div id="response"></div>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAIuvnWrS1TmG-507OvJRK43UZxdDQMmpM",
+      authDomain: "go-firebase-test-8deae.firebaseapp.com",
+      databaseURL: "https://go-firebase-test-8deae.firebaseio.com",
+      projectId: "go-firebase-test-8deae",
+      storageBucket: "go-firebase-test-8deae.appspot.com",
+      messagingSenderId: "769773060584",
+      appId: "1:769773060584:web:acb33725fff2ad4ada245d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
